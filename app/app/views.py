@@ -8,6 +8,14 @@ from flask import render_template
 def index():
     return render_template('/public/index.html')
 
+@app.route("/public/jinja")
+def jinja():
+
+    my_name = "Reed"
+
+    return render_template('/public/jinja.html', my_name=my_name)
+
 @app.route("/public/about")
 def about():
-    return "<h1 style='color: red'>About!!!!</h1>"
+    return render_template('/public/about.html')
+    # return "<h1 style='color: red'>About!!!!</h1>"
